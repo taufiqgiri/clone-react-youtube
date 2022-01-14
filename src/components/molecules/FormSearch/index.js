@@ -1,15 +1,20 @@
 import React from 'react';
-import {Paper, IconButton, Box} from '@mui/material';
+import {Paper, Box} from '@mui/material';
 import {TextInput} from '../../../components';
 import SearchIcon from '@mui/icons-material/Search';
 import {makeStyles} from '@mui/styles';
 
 const useStyles = makeStyles({
   root: {
-    padding: '2px 4px',
     width: 400,
     height: 35,
-    borderRadius: '2px'
+    borderRadius: '2px',
+    margin: '0 5px'
+  },
+  ctnBtnSearch: {
+    backgroundColor: 'hsla(0, 0%, 53.3%, 0.4)',
+    height: '100%', 
+    width: '64px'
   }
 });
 
@@ -23,8 +28,8 @@ export default function FormSearch() {
       variant="transparent"
     >
       <TextInput />
-      <Box>
-        <SearchIcon />
+      <Box className={`flex justify-content-center align-item-center ${classes.ctnBtnSearch}`}>
+        <SearchIcon sx={{color: 'white'}} />
       </Box>
     </Paper>
   )

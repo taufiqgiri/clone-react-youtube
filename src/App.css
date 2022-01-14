@@ -9,3 +9,35 @@
 .align-item-center {
   align-items: center;
 }
+
+.align-item-start {
+  align-items: flex-start;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-start {
+  justify-content: flex-start;
+}
+
+.slick-slide {
+  width: auto !important;
+  margin: 0 5px;
+}
+
+.MuiChip-root {
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 5px !important;
+}
+
+.slick-track {
+  display: flex !important;
+  align-items: center !important;
+}
