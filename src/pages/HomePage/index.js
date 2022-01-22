@@ -1,48 +1,25 @@
 import React from "react";
 import { MainLayout } from "../../layout";
-import { Box, Chip } from "@mui/material";
-import { videoCategories } from '../../sample-data/video-category';
-import { makeStyles } from "@mui/styles";
-import Slider from 'react-slick';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
-const useStyles = makeStyles({
-  chip: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: '10px'
-  }
-})
+import { Box, Divider } from "@mui/material";
+import { CategorySlider } from "../../components";
+import { recommendVideos } from '../../sample-data/video-data';
+import { VideoCard } from "../../components";
 
 export default function HomePage() {
-  const classes = useStyles();
-
-  const settings = {
-    Infinite: true,
-    speed: 500,
-    slidesToShow: 10,
-    slidesToScroll: 1
-  };
-
   return (
     <MainLayout>
-      <Box sx={{width: '90%', backgroundColor: 'transparent'}}>
-        <Slider {...settings}>
-          {videoCategories.map((category, index) => {
-            return (
-              <Chip 
-                key={index} 
-                label={category.title} 
-                variant="inactive"
-                sx={{
-                  backgroundColor: '#373737'
-                }}
-              />
-            )
-          })}
-        </Slider>
+      <Divider sx={{borderColor: '#373737', width: '100%', margin: '5px 0'}} />
+      <Box sx={{width: '100%', backgroundColor: 'transparent'}}>
+        <CategorySlider />
+      </Box>
+      <Divider sx={{borderColor: '#373737', width: '100%', margin: '5px 0'}} />
+      <Box 
+        className={`flex flex-wrap justify-content-center align-item-center`} 
+        sx={{maxHeight: '85%', overflowY: 'auto', scrollbarWidth: 'thin'}}
+      >
+        {recommendVideos.map((video, index) => {
+          return <VideoCard key={index} video={video} />
+        })}
       </Box>
     </MainLayout>
   )

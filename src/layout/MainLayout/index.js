@@ -18,7 +18,8 @@ const useStyles = makeStyles({
     display: 'flex', 
     flexDirection: 'column', 
     justifyContent: 'flex-start', 
-    alignItems: 'center'
+    alignItems: 'center',
+    height: '100%'
   }
 });
 
